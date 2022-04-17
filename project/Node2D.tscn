@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://rat_sheet.png" type="Texture" id=1]
+[ext_resource path="res://circus-tent-interior-scenic-backdrop-lightbox-6cd89a.jpg" type="Texture" id=2]
+[ext_resource path="res://Untitled 1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://music.vs" type="Script" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 16
+particles_anim_v_frames = 8
+particles_anim_loop = true
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Circus-tent-interior-scenic-backdrop-lightbox-6Cd89a" type="Sprite" parent="."]
+position = Vector2( 466, 387 )
+scale = Vector2( 1.68996, 1.68996 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="."]
+material = SubResource( 1 )
+position = Vector2( 524, 713 )
+lifetime = 5.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 300, 1 )
+direction = Vector2( 0, -1 )
+spread = 15.0
+gravity = Vector2( 0, 400 )
+initial_velocity = 697.54
+angular_velocity = 50.0
+angular_velocity_random = 1.0
+angle = 360.0
+angle_random = 1.0
+scale_amount = 1.25
+scale_amount_random = 1.0
+anim_speed = 1.5
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+mix_target = 1
+script = ExtResource( 4 )
